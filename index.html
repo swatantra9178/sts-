@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STS Public School</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Container -->
+    <div class="login-container" id="login-container">
+        <h1>STS Public School</h1>
+        <form id="login-form">
+            <input type="text" placeholder="Username" id="username" required>
+            <input type="password" placeholder="Password" id="password" required>
+            <select id="role" required>
+                <option value="">Select Role</option>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard" id="dashboard" style="display:none;">
+        <h1>STS Public School</h1>
+        <p>Welcome, <span id="user-name"></span>!</p>
+        <button id="logout-btn">Logout</button>
+
+        <!-- Student Dashboard -->
+        <div id="student-dashboard" class="hidden">
+            <button id="submit-work-btn">Submit Work</button>
+            <button id="ask-doubt-btn">Ask a Doubt</button>
+            <div id="submit-work-section" class="hidden">
+                <h2>Submit Work</h2>
+                <form id="submit-form">
+                    <input type="file" id="assignment-file" required>
+                    <button type="submit" id="submit-button">Submit</button>
+                </form>
+                <p id="submit-message" class="notification hidden">Your work has been submitted!</p>
+            </div>
+            <div id="ask-doubt-section" class="hidden">
+                <h2>Ask a Doubt</h2>
+                <form id="doubt-form">
+                    <textarea id="doubt-message" rows="4" placeholder="Type your doubt here..." required></textarea>
+                    <button type="submit">Post Doubt</button>
+                </form>
+                <h2>Your Doubts and Responses</h2>
+                <ul id="doubts-list">
+                    <!-- Doubts and responses will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Teacher Dashboard (Admin) -->
+        <div id="teacher-dashboard" class="hidden">
+            <button id="view-assignments-btn">View Assignments</button>
+            <button id="view-doubts-btn">View Doubts</button>
+            <button id="send-notification-btn">Send Notification</button>
+            <div id="view-assignments-section" class="hidden">
+                <h2>Assignments</h2>
+                <ul id="assignments-list">
+                    <!-- Assignments will be dynamically added here -->
+                </ul>
+            </div>
+            <div id="view-doubts-section" class="hidden">
+                <h2>Student Doubts</h2>
+                <ul id="doubts-list-admin">
+                    <!-- Doubts and responses will be dynamically added here -->
+                </ul>
+            </div>
+            <div id="send-notification-section" class="hidden">
+                <h2>Send Notification</h2>
+                <form id="notification-form">
+                    <textarea id="notification-message" rows="4" placeholder="Type your notification here..." required></textarea>
+                    <button type="submit">Send Notification</button>
+                </form>
+                <h2>Notification Center</h2>
+                <ul id="notifications-list">
+                    <!-- Notifications will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Confirmation Popup -->
+        <div id="confirmation-popup">
+            <div>
+                <h2>Confirmation</h2>
+                <p>Your work has been successfully submitted!</p>
+                <button id="confirmation-close">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
